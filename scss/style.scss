@@ -1,0 +1,30 @@
+@import "./fonts";
+@import "./variable";
+@import "./utiles";
+@import "./mixing";
+
+// header
+header {
+  padding: 20px 0px;
+  nav {
+    width: 80%;
+    margin: 0 auto;
+    @include flex();
+    img {
+      width: 50px;
+    }
+    ul {
+      @include flex();
+      li {
+        padding: 10px;
+        a {
+          text-transform: lowercase;
+          font-size: 1.2rem;
+        }
+        &:last-child {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
