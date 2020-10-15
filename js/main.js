@@ -1,5 +1,6 @@
-const isotopButton = document.querySelectorAll(".isotopButton li");
 const isotopContent = document.querySelectorAll(".isotop-content div");
+var header = document.getElementById("isotopButton");
+var btns = header.getElementsByClassName("btn");
 
 const active = (hash) => {
    for (let i = 0; i < isotopContent.length; i++) {
@@ -17,9 +18,11 @@ const active = (hash) => {
    }
 };
 
-for (let i = 0; i < isotopButton.length; i++) {
-   const button = isotopButton[i];
-   button.addEventListener("click", (e) => {
+for (var i = 0; i < btns.length; i++) {
+   btns[i].addEventListener("click", function (e) {
       active(e.target.hash);
+      var current = document.getElementsByClassName("active-btn");
+      current[0].className = current[0].className.replace(" active-btn", "");
+      this.className += " active-btn";
    });
 }

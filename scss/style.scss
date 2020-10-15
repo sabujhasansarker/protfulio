@@ -48,24 +48,68 @@ header {
 }
 
 .work {
+   #isotopButton {
+      display: flex;
+      margin-bottom: 2rem;
+      a {
+         text-decoration: none;
+         text-transform: uppercase;
+         color: black;
+         border-radius: 3px;
+         background: green;
+         padding: 10px 30px;
+      }
+      li {
+         margin-right: 10px;
+      }
+      .active-btn a {
+         background: red;
+      }
+   }
    .isotop-content {
-      display: inline;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
    }
    .single-isotop-content {
-      background: green;
+      position: relative;
+      cursor: pointer;
+      img {
+         width: 100%;
+         height: 100%;
+      }
+      .content {
+         display: none;
+         margin: 0;
+         height: 100%;
+         width: 100%;
+         position: absolute;
+         left: 0;
+         top: 0;
+         &-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            display: none;
+         }
+      }
+      &:hover {
+         .content {
+            display: block;
+            background: red;
+            &-value {
+               display: block;
+            }
+         }
+      }
    }
    .active-isotop {
-      opacity: 1;
-      margin: 50px;
-      height: 200px;
-      width: 200px;
-      transition: 1s ease-out;
+      display: block;
    }
    .inactive-isotop {
-      opacity: 0;
-      height: 0;
-      width: 0;
-      overflow: hidden;
-      transition: 1s ease-in;
+      display: none;
    }
 }
