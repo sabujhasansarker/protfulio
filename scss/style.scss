@@ -9,8 +9,11 @@ header {
    position: fixed;
    width: 100%;
    z-index: 999999999999;
+   background: whitesmoke;
+   border-bottom: 2px solid $primaryColor;
    a {
       text-decoration: none;
+      color: black;
    }
    nav {
       .logo img {
@@ -25,9 +28,10 @@ header {
 // about
 .about {
    padding: 50px 0;
-   padding-top: 7rem;
+   padding-top: 8rem;
    .container {
       display: flex;
+      align-items: center;
    }
    .flex {
       justify-content: unset;
@@ -42,17 +46,20 @@ header {
    }
    .cv {
       text-decoration: none;
-      background: green;
+      background: $primaryColor;
       padding: 15px 20px;
       border-radius: 5px;
       color: white;
+      &:hover {
+         background: darken($primaryColor, 10%);
+      }
    }
    img {
       width: 400px;
       border-radius: 5px;
    }
    &-content {
-      margin-left: 30px;
+      margin-left: 5rem;
       h1 {
          font-size: 3rem;
       }
@@ -80,14 +87,21 @@ header {
       li {
          margin-right: 10px;
          text-transform: uppercase;
-         color: black;
+         color: white;
          border-radius: 3px;
-         background: green;
+         background: $primaryColor;
          padding: 10px 30px;
          cursor: pointer;
+         &:hover {
+            background: darken($primaryColor, 10%);
+         }
       }
       .active-btn {
-         background: red;
+         background: $activeColor;
+         color: black;
+         &:hover {
+            background: darken($activeColor, 10%);
+         }
       }
    }
    .isotop-content {
@@ -147,14 +161,23 @@ header {
       width: 50%;
       .sec2map {
          overflow: hidden;
-         height: 550px;
+         height: 100%;
          max-width: 100%;
       }
    }
    &-right {
       width: 50%;
+      padding-left: 3rem;
+      h4 {
+         font-size: 1.5rem;
+         i {
+            color: red;
+         }
+      }
+      p {
+         margin: 1rem 0;
+      }
       form {
-         padding-left: 3rem;
          label {
             display: block;
             font-size: 1.2rem;
@@ -176,6 +199,16 @@ header {
                outline: none;
             }
          }
+         input[type="submit"] {
+            background: $primaryColor;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+            &:hover {
+               background: darken($primaryColor, 10%);
+            }
+         }
          textarea {
             height: 150px;
             resize: none;
@@ -185,6 +218,13 @@ header {
          }
       }
    }
+}
+
+footer {
+   margin-top: 4rem;
+   text-align: center;
+   background: whitesmoke;
+   padding: 2rem 0;
 }
 
 .fa {
