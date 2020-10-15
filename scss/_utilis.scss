@@ -3,6 +3,9 @@ body {
    margin: 0;
    padding: 0;
 }
+html {
+   scroll-behavior: smooth;
+}
 .m-auto {
    margin: 0 auto;
 }
@@ -32,4 +35,10 @@ a {
    display: flex;
    align-items: center;
    justify-content: space-between;
+}
+
+.heading {
+   text-align: center;
+   font-size: 3rem;
+   margin-bottom: 3rem;
 }
