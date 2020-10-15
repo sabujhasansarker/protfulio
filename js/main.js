@@ -47,3 +47,11 @@ function init_map() {
    infowindow.open(map, marker);
 }
 google.maps.event.addDomListener(window, "load", init_map);
+
+// responsive
+const responsive = document.querySelector(".responsive");
+const ul = document.querySelector("nav ul");
+responsive.addEventListener("click", () => {
+   ul.classList.toggle("active-ul");
+   console.log(ul);
+});

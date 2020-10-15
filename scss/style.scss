@@ -15,12 +15,46 @@ header {
       text-decoration: none;
       color: black;
    }
+   @include phn() {
+      .flex {
+         display: block;
+      }
+      .logo {
+         float: left;
+      }
+   }
    nav {
+      .responsive {
+         display: block;
+         float: right;
+         margin-top: 1rem;
+         span {
+            background: $primaryColor;
+            display: block;
+            width: 30px;
+            height: 2.5px;
+            margin-bottom: 5px;
+         }
+      }
       .logo img {
          width: 50px;
       }
+      @include phn() {
+         ul {
+            display: none !important;
+         }
+         .active-ul {
+            display: block !important;
+            padding-top: 4rem;
+            text-align: center;
+            line-height: 1.6;
+         }
+      }
       li {
          margin-left: 30px;
+         @include phn() {
+            margin: 0;
+         }
       }
    }
 }
