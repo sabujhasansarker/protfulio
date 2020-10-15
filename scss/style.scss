@@ -30,9 +30,12 @@ header {
       height: 50px;
       transition: 0.5s all;
       .responsive {
-         display: block;
+         display: none;
          float: right;
          margin-top: 1rem;
+         @include phn() {
+            display: block;
+         }
          span {
             background: $primaryColor;
             display: block;
@@ -182,7 +185,7 @@ header {
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 0px;
-      @include custom(664px) {
+      @include tab() {
          grid-template-columns: repeat(2, 1fr);
       }
       @include phn() {
@@ -207,18 +210,32 @@ header {
          &-value {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 20px;
+            transform: translate(0%, -50%);
             z-index: 9999;
             display: none;
+            width: 100%;
          }
       }
       &:hover {
          .content {
             display: block;
-            background: red;
+            background: $primaryColor;
             &-value {
                display: block;
+            }
+            h3 {
+               color: white;
+               margin-bottom: 1rem;
+               font-size: 1.4rem;
+               word-wrap: break-word;
+               width: 90%;
+            }
+            a {
+               text-decoration: none;
+               background: $activeColor;
+               color: black;
+               padding: 10px;
             }
          }
       }
