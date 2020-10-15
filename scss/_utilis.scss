@@ -1,0 +1,33 @@
+body {
+   font-family: $gtZirkon;
+   margin: 0;
+   padding: 0;
+}
+.m-auto {
+   margin: 0 auto;
+}
+
+ul {
+   list-style: none;
+}
+.container {
+   width: 75%;
+   margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+   margin: 0;
+}
+
+.flex {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}

@@ -1,5 +1,315 @@
-@mixin flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+// media
+@mixin tab() {
+   @media (max-width: 769px) {
+      @content;
+   }
+}
+@mixin phn() {
+   @media (max-width: 426px) {
+      @content;
+   }
+}
+
+@mixin custom($screen) {
+   @media (max-width: $screen) {
+      @content;
+   }
+}
+@mixin full() {
+   @media (max-width: 1400px) {
+      @content;
+   }
+}
+
+// margin
+@for $space from 0 through 400 {
+   @include full() {
+      .mt-#{$space} {
+         margin-top: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .mb-#{$space} {
+         margin-bottom: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .ml-#{$space} {
+         margin-left: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .mr-#{$space} {
+         margin-right: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .my-#{$space} {
+         margin: #{$space}px 0 !important ;
+      }
+      .mx-#{$space} {
+         margin: 0 #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .m-#{$space} {
+         margin: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      //   padding
+      .pt-#{$space} {
+         padding-top: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pb-#{$space} {
+         padding-bottom: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pl-#{$space} {
+         padding-left: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pr-#{$space} {
+         padding-right: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .py-#{$space} {
+         padding: #{$space}px 0 !important ;
+      }
+      .px-#{$space} {
+         padding: 0 #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .p-#{$space} {
+         padding: #{$space}px !important;
+         box-sizing: border-box;
+      }
+   }
+   @include tab() {
+      .mt-md-#{$space} {
+         margin-top: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .mb-md-#{$space} {
+         margin-bottom: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .ml-md-#{$space} {
+         margin-left: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .mr-md-#{$space} {
+         margin-right: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .my-md-#{$space} {
+         margin: #{$space}px 0 !important ;
+      }
+      .mx-md-#{$space} {
+         margin: 0 #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .m-md-#{$space} {
+         margin: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      //   padding
+      .pt-md-#{$space} {
+         padding-top: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pb-md-#{$space} {
+         padding-bottom: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pl-md-#{$space} {
+         padding-left: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pr-md-#{$space} {
+         padding-right: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .py-md-#{$space} {
+         padding: #{$space}px 0 !important ;
+      }
+      .px-md-#{$space} {
+         padding: 0 #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .p-md-#{$space} {
+         padding: #{$space}px !important;
+         box-sizing: border-box;
+      }
+   }
+   @include phn() {
+      .mt-sm-#{$space} {
+         margin-top: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .mb-sm-#{$space} {
+         margin-bottom: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .ml-sm-#{$space} {
+         margin-left: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .mr-sm-#{$space} {
+         margin-right: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .my-sm-#{$space} {
+         margin: #{$space}px 0 !important ;
+      }
+      .mx-sm-#{$space} {
+         margin: 0 #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .m-sm-#{$space} {
+         margin: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      //   padding
+      .pt-sm-#{$space} {
+         padding-top: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pb-sm-#{$space} {
+         padding-bottom: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pl-sm-#{$space} {
+         padding-left: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .pr-sm-#{$space} {
+         padding-right: #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .py-sm-#{$space} {
+         padding: #{$space}px 0 !important ;
+      }
+      .px-sm-#{$space} {
+         padding: 0 #{$space}px !important;
+         box-sizing: border-box;
+      }
+      .p-sm-#{$space} {
+         padding: #{$space}px !important;
+         box-sizing: border-box;
+      }
+   }
+}
+
+// display
+@each $display in (block, flex, none) {
+   .d-#{$display} {
+      display: $display;
+   }
+}
+@each $d in (none, underline, line-through, overline) {
+   .td-#{$d} {
+      text-decoration: $d;
+   }
+}
+
+// font size
+@for $size from 0 to 200 {
+   .fsp-#{$size} {
+      font-size: #{$size}px;
+   }
+   .fsv-#{$size} {
+      font-size: #{$size}vw;
+   }
+   @include tab() {
+      .fsp-md-#{$size} {
+         font-size: #{$size}px !important;
+      }
+      .fsv-md-#{$size} {
+         font-size: #{$size}vw;
+      }
+   }
+   @include phn() {
+      .fsp-sm-#{$size} {
+         font-size: #{$size}px !important;
+      }
+      .fsv-sm-#{$size} {
+         font-size: #{$size}vw;
+      }
+   }
+}
+
+// width
+@for $width from 0 to 101 {
+   .w-#{$width} {
+      max-width: ($width * 1%);
+   }
+   .wp-#{$width} {
+      max-width: #{$width}px;
+   }
+
+   @include tab() {
+      .w-md-#{$width} {
+         max-width: ($width * 1%);
+      }
+      .wp-md-#{$width} {
+         max-width: #{$width}px;
+      }
+   }
+   @include phn() {
+      .w-sm-#{$width} {
+         max-width: ($width * 1%);
+      }
+      .wp-sm-#{$width} {
+         max-width: #{$width}px;
+      }
+   }
+}
+// text
+@each $a in (center, left, right) {
+   .text-#{$a} {
+      text-align: $a;
+   }
+}
+
+// aline item
+@each $a in (center, baseline, end, flex-end, flex-start, self-start) {
+   .align-#{$a} {
+      align-items: $a;
+   }
+   @include tab() {
+      .align-md-#{$a} {
+         align-items: $a;
+      }
+   }
+}
+
+// justify content
+@each $a
+   in (
+      center,
+      baseline,
+      end,
+      flex-end,
+      flex-start,
+      space-around,
+      space-between,
+      right
+   )
+{
+   .jc-#{$a} {
+      justify-content: $a;
+   }
+}
+
+// font weight
+@for $i from 1 through 9 {
+   .fw-#{$i * 100} {
+      font-weight: ($i * 100);
+      &::placeholder {
+         font-weight: ($i * 100);
+      }
+   }
+}
+
+// line hight
+@for $hight from 20 to 200 {
+   .lh-#{$hight} {
+      line-height: #{$hight}px;
+   }
 }

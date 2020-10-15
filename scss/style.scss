@@ -1,30 +1,28 @@
-@import "./fonts";
 @import "./variable";
-@import "./utiles";
-@import "./mixing";
+@import "./mediaQuery";
+@import "./fonts";
+@import "./utilis";
 
 // header
 header {
-  padding: 20px 0px;
-  nav {
-    width: 80%;
-    margin: 0 auto;
-    @include flex();
-    img {
-      width: 50px;
-    }
-    ul {
-      @include flex();
-      li {
-        padding: 10px;
-        a {
-          text-transform: lowercase;
-          font-size: 1.2rem;
-        }
-        &:last-child {
-          color: $secondaryColor;
-        }
+   padding: 20px 0;
+   a {
+      text-decoration: none;
+   }
+   nav {
+      .logo img {
+         width: 50px;
       }
-    }
-  }
+      li {
+         margin-left: 30px;
+      }
+   }
+}
+
+// about
+.about {
+   padding: 50px 0;
+   img {
+      width: 400px;
+   }
 }
