@@ -48,21 +48,22 @@ header {
 }
 
 .work {
+   padding: 50px 0;
    #isotopButton {
       display: flex;
       margin-bottom: 2rem;
-      a {
-         text-decoration: none;
+      justify-content: center;
+
+      li {
+         margin-right: 10px;
          text-transform: uppercase;
          color: black;
          border-radius: 3px;
          background: green;
          padding: 10px 30px;
+         cursor: pointer;
       }
-      li {
-         margin-right: 10px;
-      }
-      .active-btn a {
+      .active-btn {
          background: red;
       }
    }
@@ -111,5 +112,54 @@ header {
    }
    .inactive-isotop {
       display: none;
+   }
+}
+
+.contact {
+   .container {
+      display: flex;
+      justify-content: space-between;
+   }
+   &-left {
+      width: 50%;
+      .sec2map {
+         overflow: hidden;
+         height: 550px;
+         max-width: 100%;
+      }
+   }
+   &-right {
+      width: 50%;
+      form {
+         padding-left: 3rem;
+         label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+         }
+         input,
+         textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font-weight: 400;
+            font-size: 1rem;
+            color: black;
+            font-family: $gtZirkon;
+            &::placeholder {
+               color: black;
+            }
+            &:focus {
+               outline: none;
+            }
+         }
+         textarea {
+            height: 150px;
+            resize: none;
+         }
+         .form-item {
+            margin-bottom: 1rem;
+         }
+      }
    }
 }

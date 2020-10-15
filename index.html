@@ -34,13 +34,13 @@
          </div>
       </section>
       <!-- work -->
-      <section class="work">
+      <section id="work" class="work">
          <div class="container">
             <ul id="isotopButton">
-               <li class="btn active-btn"><a href="#all">All</a></li>
-               <li class="btn"><a href="#mern">MERN</a></li>
-               <li class="btn"><a href="#react">React</a></li>
-               <li class="btn"><a href="#html">Html</a></li>
+               <li class="btn active-btn" id="all">All</li>
+               <li class="btn" id="mern">MERN</li>
+               <li class="btn" id="react">React</li>
+               <li class="btn" id="html">Html</li>
             </ul>
             <div class="isotop-content">
                <div id="mern" class="single-isotop-content active-isotop">
@@ -89,7 +89,43 @@
                   </div>
                </div>
             </div>
-            -->
+         </div>
+      </section>
+      <!-- contact -->
+      <section id="contact" class="contact">
+         <div class="container">
+            <div class="contact-left">
+               <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+               <div class="sec2map">
+                  <div id="gmap_canvas" style="height: 100%; width: 100%"></div>
+                  <div>
+                     <small>
+                        <a href="http://embedgooglemaps.com"></a>
+                     </small>
+                  </div>
+               </div>
+            </div>
+            <div class="contact-right">
+               <form>
+                  <div class="form-item">
+                     <label for="name">Name </label>
+                     <input type="text" placeholder="Enter your name" />
+                  </div>
+                  <div class="form-item">
+                     <label for="name">Email </label>
+                     <input type="text" placeholder="Enter your email" />
+                  </div>
+                  <div class="form-item">
+                     <textarea
+                        id="name"
+                        placeholder="Enter your message"
+                     ></textarea>
+                  </div>
+                  <div class="form-item">
+                     <input type="submit" value="Send your message" />
+                  </div>
+               </form>
+            </div>
          </div>
       </section>
       <script src="./js/main.js"></script>
