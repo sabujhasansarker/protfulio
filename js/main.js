@@ -51,7 +51,8 @@ google.maps.event.addDomListener(window, "load", init_map);
 // responsive
 const responsive = document.querySelector(".responsive");
 const ul = document.querySelector("nav ul");
+const nav = document.querySelector("nav");
 responsive.addEventListener("click", () => {
    ul.classList.toggle("active-ul");
-   console.log(ul);
+   nav.classList.toggle("active-nav");
 });

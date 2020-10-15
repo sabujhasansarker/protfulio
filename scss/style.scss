@@ -23,7 +23,12 @@ header {
          float: left;
       }
    }
+   .active-nav {
+      height: 128px;
+   }
    nav {
+      height: 50px;
+      transition: 0.5s all;
       .responsive {
          display: block;
          float: right;
@@ -41,13 +46,20 @@ header {
       }
       @include phn() {
          ul {
-            display: none !important;
+            text-align: center;
+            transform: translateX(-200%);
+            transition: 0.5s all;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            line-height: 1.6;
+            transition-delay: 0.7s all;
          }
          .active-ul {
             display: block !important;
-            padding-top: 4rem;
-            text-align: center;
-            line-height: 1.6;
+            height: 100%;
+            width: 100%;
+            transform: translateX(0%);
          }
       }
       li {
