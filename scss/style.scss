@@ -22,7 +22,50 @@ header {
 // about
 .about {
    padding: 50px 0;
+   .flex {
+      justify-content: unset;
+   }
    img {
       width: 400px;
+      border-radius: 5px;
+   }
+   &-content {
+      margin-left: 30px;
+      h1 {
+         font-size: 3rem;
+      }
+      h4 {
+         margin: 10px 0;
+         font-weight: 400;
+         font-size: 1.7rem;
+      }
+
+      p {
+         font-size: 18px;
+         font-weight: 300;
+      }
+   }
+}
+
+.work {
+   .isotop-content {
+      display: inline;
+   }
+   .single-isotop-content {
+      background: green;
+   }
+   .active-isotop {
+      opacity: 1;
+      margin: 50px;
+      height: 200px;
+      width: 200px;
+      transition: 1s ease-out;
+   }
+   .inactive-isotop {
+      opacity: 0;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      transition: 1s ease-in;
    }
 }
