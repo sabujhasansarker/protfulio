@@ -32,10 +32,14 @@ header {
    .container {
       display: flex;
       align-items: center;
+      @include custom(664px) {
+         display: block;
+      }
    }
    .flex {
       justify-content: unset;
       margin-top: 3rem;
+      flex-wrap: wrap;
       .fab {
          margin-right: 20px;
          font-size: 1.3rem;
@@ -57,16 +61,32 @@ header {
    img {
       width: 400px;
       border-radius: 5px;
+      @include custom(664px) {
+         width: 100%;
+      }
    }
    &-content {
       margin-left: 5rem;
+      @include custom(864px) {
+         margin-left: 2rem;
+      }
+      @include custom(664px) {
+         margin-left: 0;
+         margin-top: 2rem;
+      }
       h1 {
          font-size: 3rem;
+         @include tab() {
+            font-size: 2.4rem;
+         }
       }
       h4 {
          margin: 10px 0;
          font-weight: 400;
          font-size: 1.7rem;
+         @include tab() {
+            font-size: 1.3rem;
+         }
       }
 
       p {
@@ -83,17 +103,24 @@ header {
       display: flex;
       margin-bottom: 2rem;
       justify-content: center;
-
+      @include custom(550px) {
+         flex-wrap: wrap;
+      }
       li {
-         margin-right: 10px;
+         margin: 0 10px;
          text-transform: uppercase;
          color: white;
          border-radius: 3px;
          background: $primaryColor;
-         padding: 10px 30px;
+         padding: 10px 0;
+         width: 120px;
+         text-align: center;
          cursor: pointer;
          &:hover {
             background: darken($primaryColor, 10%);
+         }
+         @include custom(550px) {
+            margin-top: 1rem;
          }
       }
       .active-btn {
@@ -109,6 +136,12 @@ header {
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 0px;
+      @include custom(664px) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @include phn() {
+         grid-template-columns: repeat(1, 1fr);
+      }
    }
    .single-isotop-content {
       position: relative;
@@ -156,18 +189,32 @@ header {
    .container {
       display: flex;
       justify-content: space-between;
+      @include custom(664px) {
+         display: block;
+      }
    }
    &-left {
       width: 50%;
+      @include custom(664px) {
+         width: 100%;
+      }
       .sec2map {
          overflow: hidden;
          height: 100%;
          max-width: 100%;
+         @include custom(664px) {
+            height: 500px;
+            margin-bottom: 2rem;
+         }
       }
    }
    &-right {
       width: 50%;
       padding-left: 3rem;
+      @include custom(664px) {
+         width: 100%;
+         padding: 0;
+      }
       h4 {
          font-size: 1.5rem;
          i {

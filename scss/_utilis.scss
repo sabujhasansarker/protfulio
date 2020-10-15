@@ -18,6 +18,9 @@ ul {
 .container {
    width: 75%;
    margin: 0 auto;
+   @include custom(1000px) {
+      width: 90%;
+   }
 }
 h1,
 h2,
