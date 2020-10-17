@@ -51,6 +51,7 @@ header {
    nav {
       height: 50px;
       transition: 0.5s all;
+      transition-delay: 0.3s;
       .responsive {
          display: none;
          float: right;
@@ -78,13 +79,13 @@ header {
             height: 100%;
             width: 100%;
             line-height: 1.6;
-            transition-delay: 0.7s all;
          }
          .active-ul {
             display: block !important;
             height: 100%;
             width: 100%;
             transform: translateX(0%);
+            transition-delay: 0.5s;
          }
       }
       li {
