@@ -8,9 +8,9 @@ header {
    padding: 20px 0;
    position: fixed;
    width: 100%;
-   z-index: 99;
+   z-index: 999999;
    background: whitesmoke;
-   // border-bottom: 4px solid $primaryColor;
+   top: 0;
 
    &::after {
       content: "";
@@ -24,11 +24,13 @@ header {
    &::before {
       content: "";
       height: 6px;
-      background: $activeColor;
-      width: 100%;
+      background: #c00;
+      width: $beforeWidth;
       display: block;
       position: absolute;
       bottom: 0;
+      left: 0;
+      z-index: 99;
    }
 
    a {
@@ -392,11 +394,23 @@ footer {
 }
 
 .fa-instagram {
-   background: #125688;
+   background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+   );
    color: white;
 }
 
 .fa-skype {
    background: #00aff0;
    color: white;
+}
+
+section,
+footer {
+   display: none;
 }

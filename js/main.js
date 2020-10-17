@@ -60,30 +60,42 @@ responsive.addEventListener("click", () => {
 
 // onload
 
-window.addEventListener("load", () => {
-   function loader(_success) {
-      var width = 0,
-         t = setInterval(function () {
-            width = width + 1;
-            root.style.setProperty("--afterWidth", `${width}%`);
-            if (width === 100) {
-               clearInterval(t);
-               width = 0;
-               if (_success) {
-                  return _success();
-               }
-            }
-         }, 0);
-   }
-   loader();
-});
+window.addEventListener("load", () => loader());
 
-// scroll
-window.addEventListener("scroll", () => {
+// loader
+const loader = (_success) => {
+   var width = 0,
+      t = setInterval(function () {
+         width = width + 1;
+         root.style.setProperty("--afterWidth", `${width}%`);
+         block(false);
+         if (width === 100) {
+            clearInterval(t);
+            block(true);
+            // scroll
+            window.addEventListener("scroll", () => scrollEffect());
+            width = 0;
+            if (_success) {
+               return _success();
+            }
+         }
+      }, 0);
+};
+
+// display block
+const block = (block) => {
+   const section = document.querySelectorAll("section");
+   for (let i = 0; i < section.length; i++) {
+      section[i].style.display = block ? "block" : "none";
+   }
+   document.querySelector("footer").style.display = block ? "block" : "none";
+};
+
+// scrolling effect
+const scrollEffect = () => {
    var pos = getVerticalScrollPercentage(document.body);
-   document.querySelector("header").classList.add("scroll-position");
-   root.style.setProperty("--beforeWidth", `${Math.round(pos)}`);
-});
+   root.style.setProperty("--beforeWidth", `${Math.round(pos)}%`);
+};
 
 function getVerticalScrollPercentage(elm) {
    var p = elm.parentNode,
