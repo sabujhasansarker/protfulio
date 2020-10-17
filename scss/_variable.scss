@@ -2,3 +2,11 @@ $gtZirkon: "GT Zirkon";
 $secondaryColor: #07691c;
 $primaryColor: #2bae66;
 $activeColor: #fee715;
+
+:root {
+   --afterWidth: 0%;
+   --beforeWidth: 0%;
+}
+
+$afterWidth: var(--afterWidth);
+$beforeWidth: var(--beforeWidth);

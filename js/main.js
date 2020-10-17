@@ -1,6 +1,7 @@
 const isotopContent = document.querySelectorAll(".isotop-content div");
 var header = document.getElementById("isotopButton");
 var btns = header.getElementsByClassName("btn");
+const root = document.querySelector(":root");
 
 const active = (hash) => {
    for (let i = 0; i < isotopContent.length; i++) {
@@ -56,3 +57,39 @@ responsive.addEventListener("click", () => {
    ul.classList.toggle("active-ul");
    nav.classList.toggle("active-nav");
 });
+
+// onload
+
+window.addEventListener("load", () => {
+   function loader(_success) {
+      var width = 0,
+         t = setInterval(function () {
+            width = width + 1;
+            root.style.setProperty("--afterWidth", `${width}%`);
+            if (width === 100) {
+               clearInterval(t);
+               width = 0;
+               if (_success) {
+                  return _success();
+               }
+            }
+         }, 0);
+   }
+   loader();
+});
+
+// scroll
+window.addEventListener("scroll", () => {
+   var pos = getVerticalScrollPercentage(document.body);
+   document.querySelector("header").classList.add("scroll-position");
+   root.style.setProperty("--beforeWidth", `${Math.round(pos)}`);
+});
+
+function getVerticalScrollPercentage(elm) {
+   var p = elm.parentNode,
+      pos =
+         ((elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight)) *
+         100;
+
+   return pos;
+}

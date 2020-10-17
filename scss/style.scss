@@ -8,9 +8,29 @@ header {
    padding: 20px 0;
    position: fixed;
    width: 100%;
-   z-index: 999999999999;
+   z-index: 99;
    background: whitesmoke;
-   border-bottom: 2px solid $primaryColor;
+   // border-bottom: 4px solid $primaryColor;
+
+   &::after {
+      content: "";
+      height: 6px;
+      background: $primaryColor;
+      width: $afterWidth;
+      display: block;
+      position: absolute;
+      bottom: 0;
+   }
+   &::before {
+      content: "";
+      height: 6px;
+      background: $activeColor;
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+   }
+
    a {
       text-decoration: none;
       color: black;
